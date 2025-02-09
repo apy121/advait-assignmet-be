@@ -1,0 +1,19 @@
+.PHONY: build run test
+
+build:
+	go build -o authapi ./cmd/authapi
+
+run:
+	go run ./cmd/authapi/main.go
+
+test:
+	go test ./...
+
+docker-build:
+	docker build -t authapi .
+
+docker-run:
+	docker-compose up -d
+
+clean:
+	rm -f authapiands.sh

@@ -8,6 +8,19 @@ This is a simple REST API for user authentication.
 
 # Awesome Project
 
+### Prerequisites
+Ensure you have the following installed:
+- Go 1.18 or later
+- Docker and Docker Compose
+---
+### 🔧 Clone the Repository
+```bash
+git clone https://github.com/apy121/advait-assignmet-be.git
+cd advait-assignmet-be
+go mod tidy
+go run cmd/main/main.go
+```
+
 ## Run with Docker
 
 Pull and run the backend application:

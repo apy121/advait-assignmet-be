@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      JWT_SECRET: mysecret
+      - ENV_FILE=/app/.env
     depends_on:
       - db
 

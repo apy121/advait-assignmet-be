@@ -4,29 +4,26 @@ FROM golang:${GO_VERSION} AS builder
 
 WORKDIR /app
 
-# Copy module files and download dependencies
+# Copy project files
 COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy the entire project
 COPY . .
+COPY .env /app/.env
 
 # Build the application
-RUN go build -o main ./cmd/main
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main ./cmd/main
 
-# Create a minimal final image
+# Final Stage
 FROM alpine:latest
-
-# Install necessary certificates for secure connections
-RUN apk --no-cache add ca-certificates
 
 WORKDIR /root/
 
-# Copy the built application binary from the builder stage
+# Copy the binary from the builder
 COPY --from=builder /app/main .
 
-# Expose the service port
+# Expose the application port
 EXPOSE 8080
 
-# Command to run the app
-CMD ["./main"]
+# Execute the binary
+ENTRYPOINT ["./main"]

@@ -6,11 +6,15 @@ This is a simple REST API for user authentication.
 
 - Ensure Docker and Docker Compose are installed on your system.
 
-## Running the Application
+# Awesome Project
 
+## Run with Docker
+
+Pull and run the backend application:
 ```bash
-docker-compose up --build
-```
+docker pull apy121/awesomeproject
+docker run -p 8080:8080 apy121/awesomeproject
+````
 
 ## POST /signup: Create a new user account
 

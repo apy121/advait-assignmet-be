@@ -10,7 +10,7 @@ This is a simple REST API for user authentication.
 
 ### Prerequisites
 Ensure you have the following installed:
-- Go 1.18 or later
+- Go 1.23.5
 - Docker and Docker Compose
 ---
 ### 🔧 Clone the Repository

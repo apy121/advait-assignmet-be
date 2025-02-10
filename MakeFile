@@ -1,16 +1,16 @@
 .PHONY: build run test
 
 build:
-	go build -o authapi ./cmd/authapi
+	go build -o main ./cmd/main
 
 run:
-	go run ./cmd/authapi/main.go
+	go run ./cmd/main/main.go
 
 test:
 	go test ./...
 
 docker-build:
-	docker build -t authapi .
+	docker build -t main .
 
 docker-run:
 	docker-compose up -d

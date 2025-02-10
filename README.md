@@ -17,6 +17,7 @@ Ensure you have the following installed:
 ```bash
 git clone https://github.com/apy121/advait-assignmet-be.git
 cd advait-assignmet-be
+git checkout master
 go mod tidy
 go run cmd/main/main.go
 ```
